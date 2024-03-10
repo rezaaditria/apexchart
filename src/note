@@ -1,0 +1,180 @@
+// import './index.css';
+// import React, { useState, useEffect } from "react";
+// import Chart from "react-apexcharts";
+
+
+// function App() {
+
+//   const [options, setOptions] = useState({
+//     // chart: {
+//     //   id: "basic-bar"
+//     // },
+//     // xaxis: {
+//     //   categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
+//     // }
+//     chart: {
+//       type: "bar",
+//       stacked: false,
+//       zoom: { enabled: false },
+//       toolbar: {
+//         show: false,
+//       },
+//     },
+//     plotOptions: {
+//       bar: {
+//         horizontal: true,
+//         barHeight: "80%",
+//       },
+//     },
+//     colors: ["#875BF7"],
+//     stroke: { show: true, width: 1 },
+//     fill: { opacity: 1 },
+//     dataLabels: {
+//       enabled: false,
+//     },
+//     xaxis: {
+//       categories: []
+//     },
+//   })
+  
+//   const [series, setSeries] = useState([
+//     // {
+//     //   name: 'a',
+//     //   data: [1,2,3,4,5,6,7,8,9,10,11,12,13]
+//     // },
+//     // {
+//     //   name: 'b',
+//     //   data: [10,12,13,14,15,16,17,18,19,20]
+//     // }
+//     {backgroundColor: "#875BF7"}
+//   ])
+
+//   useEffect(()=>{
+//     fetch('https://www.melivecode.com/api/pets/7days/2023-01-01')
+//     .then(res => res.json())
+//     .then((result)=> {
+//       // console.log(result)
+//       setOptions({
+//         ...options,
+//         xaxis: {
+//           categories: result.categories
+//         }
+//       })
+//       setSeries(result.series)
+//     })
+//   },[]);
+
+//   return (
+//     <div className="app">
+//     <div className="row">
+//       <div className="mixed-chart">
+//         <h2>AreaChart</h2>
+//         <Chart
+//           options={options}
+//           series={series}
+//           type="area"
+//           width="450"
+//           />
+//       </div>
+
+
+//       <div className="mixed-chart">
+//         <h2>BarChart</h2>
+//         <Chart
+//           options={options}
+//           series={series}
+//           type="bar"
+//           // width="450"
+//           height="350"
+//           />
+//       </div>
+
+
+//       <div className="mixed-chart">
+//           <h2>Heatmap</h2>
+//         <Chart
+//           options={options}
+//           series={series}
+//           type="heatmap"
+//           width="450"
+//           />
+//       </div>
+
+
+//       <div className="mixed-chart">
+//         <h2>LineChart</h2>
+//         <Chart
+//           options={options}
+//           series={series}
+//           type="line"
+//           width="450"
+//           />
+//       </div>
+
+//       <div className="mixed-chart">
+//         <h2>PieChart</h2>
+//         <Chart
+//           options={options}
+//           series={series}
+//           type="pie"
+//           // width="450"
+//           height="420"
+//           />
+//       </div>
+
+//       <div className="mixed-chart">
+//           <h2>RadialBar</h2>
+//         <Chart
+//           options={options}
+//           series={series}
+//           type="radialBar"
+//           width="450"
+//           />
+//       </div>
+
+//       <div className="mixed-chart">
+//           <h2>Scatterplot</h2>
+//         <Chart
+//           options={options}
+//           series={series}
+//           type="scatter"
+//           width="450"
+//           />
+//       </div>
+
+//       <div className="mixed-chart">
+//         <h2>TableChart</h2>
+//         <Chart
+//           options={options}
+//           series={series}
+//           type="radialBar"
+//           width="450"
+//           />
+//       </div>
+
+//       <div className="mixed-chart">
+//           <h2>Tabletree</h2>
+//         <Chart
+//           options={options}
+//           series={series}
+//           type="radialBar"
+//           width="450"
+//         />
+//       </div>
+
+//       <div className="mixed-chart">
+//           <h2>Treemap</h2>
+//         <Chart
+//           options={options}
+//           series={series}
+//           // type="treemap"
+//           width="450"
+//         />
+//       </div>
+
+//     </div>
+//   </div>
+// );
+// }
+
+// export default App;
