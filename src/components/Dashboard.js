@@ -3,7 +3,7 @@ import axios from "axios";
 import Chart from 'react-apexcharts';
 import { fetchData } from "../API/fetch";
 
-const Cobacoba = () => {
+const Dashboard = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -38,4 +38,4 @@ const Cobacoba = () => {
     </div>
   );
 }
-export default Cobacoba;
+export default Dashboard;

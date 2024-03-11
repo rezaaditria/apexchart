@@ -10,6 +10,9 @@ import Fifth from './pages/Fifth';
 import Sixth from './pages/Sixth';
 import Seventh from './pages/Seventh';
 import Eight from './pages/Eight';
+import Nineth from './pages/Nineth';
+import Tenth from './pages/Tenth';
+import Last from './pages/Last';
 
 
 function App() {
@@ -24,6 +27,9 @@ function App() {
         <Route path="/Sixth" element={<Sixth/>}/>
         <Route path="/Seventh" element={<Seventh/>}/>
         <Route path="/Eight" element={<Eight/>}/>
+        <Route path="/Nineth" element={<Nineth/>}/>
+        <Route path="/Tenth" element={<Tenth/>}/>
+        <Route path="/Last" element={<Last/>}/>
 
       </Routes>
     </Router>
