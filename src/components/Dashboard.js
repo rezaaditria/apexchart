@@ -1,41 +1,56 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import Chart from 'react-apexcharts';
-import { fetchData } from "../API/fetch";
+import React, { useState } from 'react';
 
-const Dashboard = () => {
-    const [data, setData] = useState([]);
+function Dashboard() {
+  const [chart, setChart] = useState([]);
 
-    useEffect(() => {
-      const getData = async () => {
-        const data = await fetchData();
-        setData(data);
-      };
-  
-      getData();
-    }, []);
+  function handleOnDrag(e, chartTypes) {
+    e.dataTransfer.setData("chart Types", chartTypes);
+  }
 
-    const divisi = [...new Set(data.map(item => item.divisi))];
-  const seriesData = divisi.map(divisi => data.filter(item => item.divisi === divisi).length);
+  function handleOnDrop(e) {
+    const chartTypes = e.dataTransfer.getData("chart Types");
+    console.log("chartTypes: ", chartTypes);
+    setChart([...chart, chartTypes]);
+  }
 
-  const options = {
-    chart: {
-      id: 'apexchart-example'
-    },
-    xaxis: {
-      categories: divisi
-    }
-  };
-
-  const series = [{
-    name: 'jumlah',
-    data: seriesData
-  }];
+  function handleDragOver(e) {
+    e.preventDefault();
+  }
 
   return (
-    <div>
-      <Chart options={options} series={series} type="bar" width={500} height={320} />
-    </div>
+    <div className="app">
+      <div className="charts">
+        <div
+          className="chart"
+          draggable
+          onDragStart={(e) => handleOnDrag(e, "chart A")}
+        >
+          Chart A
+        </div>
+        <div
+          className="chart"
+          draggable
+          onDragStart={(e) => handleOnDrag(e, "chart B")}
+        >
+          Chart B
+        </div>
+        <div
+          className="chart"
+          draggable
+          onDragStart={(e) => handleOnDrag(e, "chart C")}
+        >
+          Chart C
+        </div>
+</div>
+        <div className="page" onDrop={handleOnDrop} onDragOver={handleDragOver}>
+        {chart.map((chart,index)=> (
+          <div className="droppedchart" key={index}>
+            {chart}
+          </div>
+        ))}
+        </div>
+      </div>
   );
 }
+
 export default Dashboard;
