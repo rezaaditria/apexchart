@@ -1,11 +1,9 @@
 import '../index.css';
 import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
-import { useNavigate } from 'react-router-dom';
 import { fetchData } from "../API/fetch";
 
 function Radialbar() {
-  const navigate = useNavigate();
 
   const [data, setData] = useState([]);
 
@@ -82,11 +80,6 @@ function Radialbar() {
             height="350px"
             width="600px"
           />
-          <button onClick={() => navigate('/seventh')} className="ui-btn">
-            <span>
-              scatterpoint
-            </span>
-          </button>
         </div>
       </div>
     </div>

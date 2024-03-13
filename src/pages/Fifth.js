@@ -1,8 +1,18 @@
-
-import Piechart from "../components/Piechart"
+import Piechart from "../components/Piechart";
+import { useNavigate } from 'react-router-dom';
 
 const Fifth =()=>{
-    return <Piechart/>
+    const navigate = useNavigate();
+    return (
+    <>
+    <Piechart/>
+    <button onClick={() => navigate('/Sixth')} className="ui-btn">
+            <span>
+              Radialbar
+            </span>
+          </button>
+    </>
+    )
 }
 
 export default Fifth

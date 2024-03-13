@@ -1,11 +1,9 @@
 import '../index.css';
 import React, { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
 import { fetchData } from "../API/fetch";
 import { DataGrid } from '@mui/x-data-grid';
 
 function TreeTable() {
-  const navigate = useNavigate();
 
   const [data, setData] = useState([]);
 
@@ -57,11 +55,6 @@ function TreeTable() {
               hideFooterSelectedRowCount 
             />
           </div>
-          <button onClick={() => navigate('/Tenth')} className="table-btn">
-            <span>
-              Treemap Chart
-            </span>
-          </button>
         </div>
       </div>
     </div>

@@ -1,7 +1,18 @@
-import Treemap from "../components/Treemap"
+import Treemap from "../components/Treemap";
+import { useNavigate } from 'react-router-dom';
 
 const Tenth =()=>{
-    return <Treemap/>
+    const navigate = useNavigate();
+    return (
+    <>
+    <Treemap/>
+    <button onClick={() => navigate('/Last')} className="ui-btn">
+            <span>
+              Dashboard
+            </span>
+          </button>
+    </>
+    )
 }
 
 export default Tenth

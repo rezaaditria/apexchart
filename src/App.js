@@ -1,7 +1,6 @@
 import {BrowserRouter as Router , Routes, Route} from 'react-router-dom';
 import React from 'react';
 
-
 import Home from './pages/Home';
 import Second from './pages/Second';
 import Third from './pages/Third';

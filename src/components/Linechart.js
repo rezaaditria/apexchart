@@ -1,11 +1,9 @@
 import '../index.css';
 import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
-import { useNavigate } from 'react-router-dom';
 import { fetchData } from "../API/fetch";
 
 function Linechart() {
-  const navigate = useNavigate();
 
   const [data, setData] = useState([]);
 
@@ -71,11 +69,6 @@ function Linechart() {
             height="350px"
             width="600px"
           />
-          <button onClick={() => navigate('/Fifth')} className="ui-btn">
-            <span>
-              Piechart
-            </span>
-          </button>
         </div>
       </div>
     </div>

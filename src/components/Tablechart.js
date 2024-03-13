@@ -1,11 +1,9 @@
 import '../index.css';
 import React, { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
 import { fetchData } from "../API/fetch";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 
 function Tablechart() {
-  const navigate = useNavigate();
 
   const [data, setData] = useState([]);
 
@@ -44,11 +42,6 @@ function Tablechart() {
               </TableBody>
             </Table>
           </TableContainer>
-          <button onClick={() => navigate('/nineth')} className="table-btn">
-            <span>
-              Table tree
-            </span>
-          </button>
         </div>
       </div>
     </div>

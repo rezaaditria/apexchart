@@ -1,11 +1,9 @@
 import '../index.css';
 import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
-import { useNavigate } from 'react-router-dom';
 import { fetchData } from "../API/fetch";
 
 function TreemapChart() {
-  const navigate = useNavigate();
 
   const [data, setData] = useState([]);
 
@@ -59,14 +57,8 @@ function TreemapChart() {
             options={options}
             series={[{ data: seriesData }]}
             type="treemap"
-            height={500}
-            width={450}
+            height={380}
           />
-          <button onClick={() => navigate('/Last')} className="ui-btn">
-            <span>
-              dashboard
-            </span>
-          </button>
         </div>
       </div>
     </div>

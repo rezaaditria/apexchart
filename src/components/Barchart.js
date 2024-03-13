@@ -1,11 +1,10 @@
 import '../index.css';
 import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
-import { useNavigate } from 'react-router-dom';
 import { fetchData } from "../API/fetch";
 
 function Barchart() {
-  const navigate = useNavigate();
+  
 
   const [data, setData] = useState([]);
 
@@ -59,11 +58,6 @@ function Barchart() {
             height="350px"
             width="600px"
           />
-          <button onClick={() => navigate('/Third')} className="ui-btn">
-            <span>
-              Heatmap
-            </span>
-          </button>
         </div>
       </div>
     </div>

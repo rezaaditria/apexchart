@@ -1,11 +1,9 @@
 import '../index.css';
 import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
-import { useNavigate } from 'react-router-dom';
 import { fetchData } from "../API/fetch";
 
 function Piechart() {
-  const navigate = useNavigate();
 
   const [data, setData] = useState([]);
 
@@ -47,11 +45,6 @@ function Piechart() {
             height="420px"
             width="600px"
           />
-          <button onClick={() => navigate('/Sixth')} className="ui-btn">
-            <span>
-              Radialbar
-            </span>
-          </button>
         </div>
       </div>
     </div>

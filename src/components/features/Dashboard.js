@@ -1,9 +1,14 @@
-import '../index.css';
+import styles from './Dashboard.module.css'
 import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
-import { fetchData } from "../API/fetch";
+import { fetchData } from '../../API/fetch';
+import Piechart from '../Piechart'
+import Barchart from '../Barchart'
+import Areachart from '../Areachart'
+import Heatmap from '../Heatmap'
 
-function Areachart() {
+
+function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -44,22 +49,29 @@ function Areachart() {
     },
   };
 
+
+
   return (
-    <div className="app">
-      <div className="row">
-        <div className="mixed-chart">
-          <h2>Areachart</h2>
-          <Chart
-            options={options}
-            series={[{ data: seriesData }]}
-            type="area"
-            height="350px"
-            width="600px"
-          />
-        </div>
+  <div className={styles.App}>
+    <div className={styles.row}>
+      <div >
+      <Piechart 
+      width={"30%"}
+      options={{ maintainAspectRatio: false }}/>
       </div>
+      <div>
+      <Barchart/>
+      </div>
+      <div>
+      <Areachart/>
+      </div>
+      <div>
+      <Heatmap/>
+      </div>
+
     </div>
-  );
+  </div>
+);
 }
 
-export default Areachart;
+export default App;

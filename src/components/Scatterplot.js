@@ -1,11 +1,9 @@
 import '../index.css';
 import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
-import { useNavigate } from 'react-router-dom';
 import { fetchData } from "../API/fetch";
 
 function Scatterplot() {
-  const navigate = useNavigate();
 
   const [data, setData] = useState([]);
 
@@ -59,11 +57,6 @@ function Scatterplot() {
             height="350px"
             width="600px"
           />
-          <button onClick={() => navigate('/Eight')} className="ui-btn">
-            <span>
-              Tablechart
-            </span>
-          </button>
         </div>
       </div>
     </div>
